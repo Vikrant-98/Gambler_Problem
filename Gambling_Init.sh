@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 gambler=100
 Gambler_bet=1
@@ -31,10 +31,10 @@ gambler=$Gambler_Fix
                 echo "Gambler lost $gambler_won on $day_Count day"
         fi
         gambler_Total_Money=$(( $gambler_Total_Money + ($gambler-$Gambler_Fix) ))
-        if [ $gambler_Total_Money > 0 ]
+        if [ $gambler_Total_Money -gt 0 ]
         then
                 echo "Gambler wins $gambler_Total_Money!!!!!!!!!!!!!!!!!!!!!!!"
-        elif [ $gambler_Total_Money  <= 0 ]
+        elif [ $gambler_Total_Money  -ge 0 ]
         then
                 temp=$(( 2*$gambler_Total_Money - $gambler_Total_Money ))
                 echo "Gambler looses $temp!!!!!!!!!!!!!!!!!!!!!!"
