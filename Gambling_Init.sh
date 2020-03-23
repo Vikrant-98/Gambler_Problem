@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 gambler=100
 Gambler_bet=1
