@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 gambler=100
 Gambler_bet=1
@@ -7,8 +7,8 @@ Gambler_Stake_Loose=$(($gambler-$gambler/2))
 Gambler_Fix=100
 gambler_Total_Money=0
 day_Count=0
-luckiest_day=$gambler
-unluckiest_day=$gambler
+luckiest=$gambler
+unluckiest=$gambler
 while [ $day_Count != 30 ]
 do
 ((day_Count++))
@@ -33,13 +33,15 @@ gambler=$Gambler_Fix
                 echo "Gambler lost $gambler_won on $day_Count day"
         fi
         gambler_Total_Money=$(( $gambler_Total_Money + ($gambler-$Gambler_Fix) ))
-                if [ $luckiest_day -lt $gambler_Total_Money ]
+                if [ $luckiest -lt $gambler_Total_Money ]
                 then
-                        luckiest_day=$gambler_Total_Money
+                        luckiest_day=$day_Count
+			luckiest=$gambler_Total_Money
                 fi
-                if [ $unluckiest_day -gt $gambler_Total_Money ]
+                if [ $unluckiest -gt $gambler_Total_Money ]
                 then
-                        unluckiest_day=$gambler_Total_Money
+                        unluckiest_day=$day_Count
+			unluckiest=$gambler_Total_Money
                 fi
         if [ $gambler_Total_Money -gt 0 ]
         then
@@ -50,6 +52,6 @@ gambler=$Gambler_Fix
                 echo "Gambler looses $temp!!!!!!!!!!!!!!!!!!!!!!"
         fi
 done
-echo "My luckiest Day when I won :$luckiest_day"
-echo "My unluckiest day when I loose :$unluckiest_day"
+echo "My luckiest Day was $luckiest_day  when I won :$luckiest"
+echo "My unluckiest day was $unluckiest_day when I loose :$unluckiest"
 
