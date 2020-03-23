@@ -29,6 +29,3 @@ gambler_Total_Money=$(($gambler_Total_Money+$gambler-$Gambler_Fix))
 done
 done
 
-echo "$gambler_Total_Money"
-echo "$count1"
-echo "$count2"
