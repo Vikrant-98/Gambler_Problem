@@ -22,7 +22,7 @@ gambler=$Gambler_Fix
                 	gambler=$(($gambler-$Gambler_bet))
 		fi
 	done
-gambler_Total_Money=$(( $gambler_Total_Money + ($gambler-$Gambler_Fix) ))
+	gambler_Total_Money=$(( $gambler_Total_Money + ($gambler-$Gambler_Fix) ))
 
 	if [ $gambler_Total_Money > 0 ]
 	then
